@@ -4,7 +4,7 @@
     "publishConfig": {
         "access": "public"
     },
-    "version": "0.0.7",
+    "version": "0.0.9",
     "description": "Ylide Protocol SDK utils library to handle different types of buffers",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -13,12 +13,12 @@
         "url": "https://github.com/ylide-io/smart-buffer.git"
     },
     "files": [
-        "lib/**/*"
+        "lib/**/*",
+        "src/**/*"
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
         "build": "tsc",
-        "prepare": "npm run build",
         "format": "prettier --write \"src/**/*.ts\"",
         "lint": "tslint -p tsconfig.json",
         "prepublishOnly": "npm test && npm run lint",
