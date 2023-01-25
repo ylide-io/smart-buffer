@@ -11,6 +11,10 @@ export declare const bufcode: {
         to: (arr: Uint8Array) => string;
         from: (str: string) => Uint8Array;
     };
+    base64url: {
+        to: (arr: Uint8Array) => string;
+        from: (str: string) => Uint8Array;
+    };
     words: {
         to: (arr: Uint8Array) => number[];
         from: (words: number[]) => Uint8Array;

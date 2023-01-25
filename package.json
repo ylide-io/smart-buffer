@@ -1,44 +1,44 @@
 {
-    "name": "@ylide/smart-buffer",
-    "private": false,
-    "publishConfig": {
-        "access": "public"
-    },
-    "version": "0.0.9",
-    "description": "Ylide Protocol SDK utils library to handle different types of buffers",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ylide-io/smart-buffer.git"
-    },
-    "files": [
-        "lib/**/*",
-        "src/**/*"
-    ],
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 0",
-        "build": "tsc",
-        "format": "prettier --write \"src/**/*.ts\"",
-        "lint": "tslint -p tsconfig.json",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint"
-    },
-    "keywords": [
-        "blockchain",
-        "messaging",
-        "buffers"
-    ],
-    "author": "Danila Simonov",
-    "license": "ISC",
-    "dependencies": {},
-    "devDependencies": {
-        "chai": "^4.3.6",
-        "mocha": "^10.0.0",
-        "prettier": "^2.7.1",
-        "ts-node": "^10.8.2",
-        "tslint": "^6.1.3",
-        "tslint-config-prettier": "^1.18.0",
-        "typescript": "^4.7.4"
-    }
+	"name": "@ylide/smart-buffer",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"version": "0.0.10",
+	"description": "Ylide Protocol SDK utils library to handle different types of buffers",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ylide-io/smart-buffer.git"
+	},
+	"files": [
+		"lib/**/*",
+		"src/**/*"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 0",
+		"build": "tsc",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"lint": "tslint -p tsconfig.json",
+		"prepublishOnly": "npm test && npm run lint",
+		"preversion": "npm run lint"
+	},
+	"keywords": [
+		"blockchain",
+		"messaging",
+		"buffers"
+	],
+	"author": "Danila Simonov",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "18.11.18",
+		"chai": "4.3.6",
+		"mocha": "10.0.0",
+		"prettier": "2.7.1",
+		"ts-node": "10.8.2",
+		"tslint": "6.1.3",
+		"tslint-config-prettier": "1.18.0",
+		"typescript": "4.9.4"
+	}
 }

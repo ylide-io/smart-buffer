@@ -36,6 +36,14 @@ export const bufcode = {
 			return bufcode.binary.from(atob(str));
 		},
 	},
+	base64url: {
+		to: (arr: Uint8Array) => {
+			return bufcode.base64.to(arr).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+		},
+		from: (str: string) => {
+			return bufcode.base64.from(str.replace(/-/g, '+').replace(/_/g, '/'));
+		},
+	},
 	words: {
 		to: (arr: Uint8Array) => {
 			const words = [];

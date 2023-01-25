@@ -1,6 +1,7 @@
 import { bufcode } from './bufcode';
 
 export { bufcode };
+
 export default class SmartBuffer {
 	private _offset = 0;
 
