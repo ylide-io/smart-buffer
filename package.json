@@ -4,7 +4,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"description": "Ylide Protocol SDK utils library to handle different types of buffers",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",

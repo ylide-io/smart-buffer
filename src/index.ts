@@ -64,14 +64,14 @@ export default class SmartBuffer {
 	}
 
 	writeUint16(val: number) {
-		this._bytes[this._offset++] = (val >> 8) & 0xff;
+		this._bytes[this._offset++] = (val >>> 8) & 0xff;
 		this._bytes[this._offset++] = val & 0xff;
 	}
 
 	writeUint32(val: number) {
-		this._bytes[this._offset++] = (val >> 24) & 0xff;
-		this._bytes[this._offset++] = (val >> 16) & 0xff;
-		this._bytes[this._offset++] = (val >> 8) & 0xff;
+		this._bytes[this._offset++] = (val >>> 24) & 0xff;
+		this._bytes[this._offset++] = (val >>> 16) & 0xff;
+		this._bytes[this._offset++] = (val >>> 8) & 0xff;
 		this._bytes[this._offset++] = val & 0xff;
 	}
 
@@ -125,7 +125,7 @@ export default class SmartBuffer {
 
 	readUint32() {
 		return (
-			((this._bytes[this._offset++] & 0xff) << 24) +
+			(((this._bytes[this._offset++] & 0xff) << 24) >>> 0) +
 			((this._bytes[this._offset++] & 0xff) << 16) +
 			((this._bytes[this._offset++] & 0xff) << 8) +
 			(this._bytes[this._offset++] & 0xff)
