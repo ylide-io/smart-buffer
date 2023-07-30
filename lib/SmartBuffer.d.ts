@@ -34,9 +34,12 @@ export declare class SmartBuffer {
     readBuffer(length: number): SmartBuffer;
     readBytes8Length(): Uint8Array;
     readBuffer8Length(): SmartBuffer;
+    readString8Length(): string;
     readBytes16Length(): Uint8Array;
     readBuffer16Length(): SmartBuffer;
+    readString16Length(): string;
     readBytes32Length(): Uint8Array;
     readBuffer32Length(): SmartBuffer;
+    readString32Length(): string;
     get bytes(): Uint8Array;
 }

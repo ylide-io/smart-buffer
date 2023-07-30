@@ -150,6 +150,10 @@ export class SmartBuffer {
 		return this.readBuffer(this.readUint8());
 	}
 
+	readString8Length() {
+		return bufcode.utf8.to(this.readBytes32Length());
+	}
+
 	readBytes16Length() {
 		return this.readBytes(this.readUint16());
 	}
@@ -158,12 +162,20 @@ export class SmartBuffer {
 		return this.readBuffer(this.readUint16());
 	}
 
+	readString16Length() {
+		return bufcode.utf8.to(this.readBytes32Length());
+	}
+
 	readBytes32Length() {
 		return this.readBytes(this.readUint32());
 	}
 
 	readBuffer32Length() {
 		return this.readBuffer(this.readUint32());
+	}
+
+	readString32Length() {
+		return bufcode.utf8.to(this.readBytes32Length());
 	}
 
 	get bytes() {
