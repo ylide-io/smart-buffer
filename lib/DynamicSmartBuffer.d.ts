@@ -26,10 +26,13 @@ export declare class DynamicSmartBuffer {
     writeBuffer(val: SmartBuffer | DynamicSmartBuffer): void;
     writeBytes8Length(val: Uint8Array): void;
     writeBuffer8Length(val: SmartBuffer | DynamicSmartBuffer): void;
+    writeString8Length(val: string): void;
     writeBytes16Length(val: Uint8Array): void;
     writeBuffer16Length(val: SmartBuffer | DynamicSmartBuffer): void;
+    writeString16Length(val: string): void;
     writeBytes32Length(val: Uint8Array): void;
     writeBuffer32Length(val: SmartBuffer | DynamicSmartBuffer): void;
+    writeString32Length(val: string): void;
     readUint8(): number;
     readUint16(): number;
     readUint32(): number;
@@ -38,9 +41,12 @@ export declare class DynamicSmartBuffer {
     readDynamicBuffer(length: number): DynamicSmartBuffer;
     readBytes8Length(): Uint8Array;
     readBuffer8Length(): SmartBuffer;
+    readString8Length(): string;
     readBytes16Length(): Uint8Array;
     readBuffer16Length(): SmartBuffer;
+    readString16Length(): string;
     readBytes32Length(): Uint8Array;
     readBuffer32Length(): SmartBuffer;
+    readString32Length(): string;
     get bytes(): Uint8Array;
 }

@@ -125,6 +125,10 @@ export class DynamicSmartBuffer {
 		this.writeBuffer(val);
 	}
 
+	writeString8Length(val: string) {
+		this.writeBytes8Length(bufcode.utf8.from(val));
+	}
+
 	writeBytes16Length(val: Uint8Array) {
 		if (val.length > 65535) throw new Error('Length for 16-bit length bytes must be less than 65536');
 		this.willWrite(2 + val.length);
@@ -139,6 +143,10 @@ export class DynamicSmartBuffer {
 		this.writeBuffer(val);
 	}
 
+	writeString16Length(val: string) {
+		this.writeBytes16Length(bufcode.utf8.from(val));
+	}
+
 	writeBytes32Length(val: Uint8Array) {
 		if (val.length > 4294967295) throw new Error('Length for 32-bit length bytes must be less than 4294967296');
 		this.willWrite(4 + val.length);
@@ -151,6 +159,10 @@ export class DynamicSmartBuffer {
 		this.willWrite(4 + val.size);
 		this.writeUint32(val.bytes.length);
 		this.writeBuffer(val);
+	}
+
+	writeString32Length(val: string) {
+		this.writeBytes32Length(bufcode.utf8.from(val));
 	}
 
 	readUint8() {
@@ -190,6 +202,10 @@ export class DynamicSmartBuffer {
 		return this.readBuffer(this.readUint8());
 	}
 
+	readString8Length() {
+		return bufcode.utf8.to(this.readBytes8Length());
+	}
+
 	readBytes16Length() {
 		return this.readBytes(this.readUint16());
 	}
@@ -198,12 +214,20 @@ export class DynamicSmartBuffer {
 		return this.readBuffer(this.readUint16());
 	}
 
+	readString16Length() {
+		return bufcode.utf8.to(this.readBytes16Length());
+	}
+
 	readBytes32Length() {
 		return this.readBytes(this.readUint32());
 	}
 
 	readBuffer32Length() {
 		return this.readBuffer(this.readUint32());
+	}
+
+	readString32Length() {
+		return bufcode.utf8.to(this.readBytes32Length());
 	}
 
 	get bytes() {
