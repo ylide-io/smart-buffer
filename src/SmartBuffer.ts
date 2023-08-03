@@ -151,7 +151,7 @@ export class SmartBuffer {
 	}
 
 	readString8Length() {
-		return bufcode.utf8.to(this.readBytes32Length());
+		return bufcode.utf8.to(this.readBytes8Length());
 	}
 
 	readBytes16Length() {
@@ -163,7 +163,7 @@ export class SmartBuffer {
 	}
 
 	readString16Length() {
-		return bufcode.utf8.to(this.readBytes32Length());
+		return bufcode.utf8.to(this.readBytes16Length());
 	}
 
 	readBytes32Length() {
