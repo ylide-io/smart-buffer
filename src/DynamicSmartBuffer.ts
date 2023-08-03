@@ -77,6 +77,7 @@ export class DynamicSmartBuffer {
 			const newBuffer = new Uint8Array(this._buffer.length * 2);
 			newBuffer.set(this._buffer);
 			this._buffer = newBuffer;
+			this._size = this._offset + size;
 		}
 	}
 
@@ -113,14 +114,12 @@ export class DynamicSmartBuffer {
 
 	writeBytes8Length(val: Uint8Array) {
 		if (val.length > 255) throw new Error('Length for 8-bit length bytes must be less than 256');
-		this.willWrite(1 + val.length);
 		this.writeUint8(val.length);
 		this.writeBytes(val);
 	}
 
 	writeBuffer8Length(val: SmartBuffer | DynamicSmartBuffer) {
 		if (val.size > 255) throw new Error('Length for 8-bit length bytes must be less than 256');
-		this.willWrite(1 + val.size);
 		this.writeUint8(val.bytes.length);
 		this.writeBuffer(val);
 	}
@@ -131,14 +130,12 @@ export class DynamicSmartBuffer {
 
 	writeBytes16Length(val: Uint8Array) {
 		if (val.length > 65535) throw new Error('Length for 16-bit length bytes must be less than 65536');
-		this.willWrite(2 + val.length);
 		this.writeUint16(val.length);
 		this.writeBytes(val);
 	}
 
 	writeBuffer16Length(val: SmartBuffer | DynamicSmartBuffer) {
 		if (val.size > 65535) throw new Error('Length for 16-bit length bytes must be less than 65536');
-		this.willWrite(2 + val.size);
 		this.writeUint16(val.bytes.length);
 		this.writeBuffer(val);
 	}
@@ -149,14 +146,12 @@ export class DynamicSmartBuffer {
 
 	writeBytes32Length(val: Uint8Array) {
 		if (val.length > 4294967295) throw new Error('Length for 32-bit length bytes must be less than 4294967296');
-		this.willWrite(4 + val.length);
 		this.writeUint32(val.length);
 		this.writeBytes(val);
 	}
 
 	writeBuffer32Length(val: SmartBuffer | DynamicSmartBuffer) {
 		if (val.size > 4294967295) throw new Error('Length for 32-bit length bytes must be less than 4294967296');
-		this.willWrite(4 + val.size);
 		this.writeUint32(val.bytes.length);
 		this.writeBuffer(val);
 	}
