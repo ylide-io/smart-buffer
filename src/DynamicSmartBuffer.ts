@@ -77,8 +77,8 @@ export class DynamicSmartBuffer {
 			const newBuffer = new Uint8Array(this._buffer.length * 2);
 			newBuffer.set(this._buffer);
 			this._buffer = newBuffer;
-			this._size = this._offset + size;
 		}
+		this._size = this._offset + size;
 	}
 
 	writeUint8(val: number) {
